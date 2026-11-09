@@ -1,21 +1,53 @@
 # 🎓 Face Recognition Attendance Management System
 
-An automated **Attendance Management System** built using **Python and OpenCV** that identifies registered students through facial recognition and records their attendance automatically.
+<p align="center">
+  <img src="https://img.shields.io/badge/Python-3.8-blue?logo=python&logoColor=white" />
+  <img src="https://img.shields.io/badge/OpenCV-Computer%20Vision-green?logo=opencv&logoColor=white" />
+  <img src="https://img.shields.io/badge/GUI-Tkinter-orange" />
+  <img src="https://img.shields.io/badge/Database-MySQL-blue?logo=mysql&logoColor=white" />
+</p>
 
-The system provides an easy-to-use GUI for student registration, face image collection, model training, automatic attendance, and manual attendance management.
+<p align="center">
+  <b>An Intelligent Attendance Management System Using Facial Recognition Technology</b>
+</p>
 
 ---
 
+## 👥 Team Members
+
+**Institution:** QIS College of Engineering  
+**Department:** Computer Science and Engineering  
+**Academic Year:** 2025–2026
+
+| S.No. | Team Member | Roll Number |
+|---|---|---|
+| 1 | T. V. Sumathi | 22491A0558 |
+| 2 | M. Manvitha | 22491A0559 |
+| 3 | V. Kousalya | 22491A0560 |
+| 4 | Y. Likhitha | 22491A0564 |
+| 5 | B. Ashok | 22491A0571 |
+| 6 | **K. Prem Kumar** | **22491A0590** |
+
+---
+
+## 📌 Project Overview
+
+The Face Recognition Attendance Management System is a Python-based desktop application developed using OpenCV and computer vision technology to automate student attendance.
+
+The system captures student facial images, trains a face recognition model, identifies registered students through a webcam, and automatically records attendance.
+
+It also provides manual attendance functionality, student management, CSV report generation, and optional database integration.
+
 ## ✨ Features
 
-- 👤 **Student Registration** – Register students using their ID and name.
-- 📸 **Face Detection & Image Collection** – Capture up to 200 face images per student.
-- 🧠 **Face Recognition Training** – Train the recognition model using collected face images.
-- ✅ **Automatic Attendance** – Recognize students and record attendance automatically.
-- 📝 **Manual Attendance** – Mark attendance manually without facial recognition.
-- 📊 **CSV Attendance Reports** – Generate attendance records based on date, time, and subject.
-- 🗄️ **Database Integration** – Store student and attendance information using WAMP Server.
-- 📷 **Webcam Support** – Supports both default and external webcams.
+- 👤 Student Registration – Register students using their ID and name.
+- 📸 Face Detection – Capture approximately 200 facial images per student.
+- 🧠 Model Training – Train a face recognition model using collected images.
+- ✅ Automatic Attendance – Identify registered students and record attendance.
+- 📝 Manual Attendance – Mark attendance without facial recognition.
+- 📊 CSV Reports – Generate attendance records based on date, time, and subject.
+- 🗄️ Database Integration – Store student and attendance information using WAMP Server.
+- 📷 Webcam Support – Supports default and external webcams.
 
 ## 🛠️ Technologies Used
 
@@ -23,15 +55,23 @@ The system provides an easy-to-use GUI for student registration, face image coll
 |---|---|
 | Python 3.8 | Core programming language |
 | OpenCV | Face detection and recognition |
+| Haar Cascade | Face detection |
 | Tkinter | Graphical User Interface |
 | Pillow (PIL) | Image processing |
-| Pandas | Attendance data management |
-| CSV | Attendance record storage |
-| WAMP Server | Database integration |
+| Pandas | Attendance data processing |
+| CSV | Attendance report generation |
+| MySQL | Database management |
+| WAMP Server | Local database environment |
 
 ## 📋 Requirements
 
-Install the following dependencies:
+- Python 3.8
+- Windows operating system
+- Webcam or external camera
+- Visual Studio Code / PyCharm
+- WAMP Server (optional database integration)
+
+### Install Required Libraries
 
 ```bash
 pip install opencv-python
@@ -39,67 +79,107 @@ pip install Pillow
 pip install pandas
 ```
 
-**Note:** Tkinter is included with most standard Windows Python installations.
+**Note:** Tkinter is generally included with standard Python installations.
 
-## 📁 Project Setup
+---
 
-### 1. Clone the repository
+## 📂 Project Structure
+
+```text
+Face-Recognition-Attendance-System/
+│
+├── Face-Recognition-Attendance-System-main/
+│   │
+│   ├── TrainingImage/
+│   │   └── Student Face Images
+│   │
+│   ├── TrainingImageLabel/
+│   │   └── Trainner.yml
+│   │
+│   ├── StudentDetails/
+│   │   └── StudentDetails.csv
+│   │
+│   ├── haarcascade_frontalface_alt.xml
+│   ├── haarcascade_frontalface_default.xml
+│   ├── training.py
+│   └── testing.py
+│
+├── README.md
+└── requirements.txt
+```
+
+## ⚙️ Installation Guide
+
+### 1. Clone the Repository
 
 ```bash
 git clone https://github.com/kaukurthiprem/Face_emotional_recitation.git
 ```
 
-### 2. Navigate to the project folder
+### 2. Navigate to the Project Directory
 
 ```bash
 cd Face_emotional_recitation
 ```
 
-### 3. Create a Python virtual environment
+### 3. Create a Virtual Environment
 
 ```bash
 py -3.8 -m venv venv38
 ```
 
-### 4. Activate the virtual environment
+### 4. Activate the Virtual Environment
 
 ```bash
 venv38\Scripts\activate
 ```
 
-### 5. Install the required libraries
+### 5. Install Dependencies
 
 ```bash
 pip install opencv-python Pillow pandas
 ```
 
-### 6. Configure project paths
+### 6. Configure Project Paths
 
-- Create a `TrainingImage` folder in the project directory if it does not already exist.
-- Open `AMS_Run.py`.
-- Update all file paths according to your local system directory.
+- Create a `TrainingImage` folder if it does not exist.
+- Check the image and model storage paths.
+- Update file paths according to your local system.
+- Ensure the webcam is connected and accessible.
 
 ## 🚀 How to Run the Project
 
-Execute the following command:
+The repository contains separate training and testing scripts.
+
+**Run the training script:**
 
 ```bash
-python AMS_Run.py
+python training.py
 ```
 
-## ⚙️ How the System Works
+**Run the testing script:**
+
+```bash
+python testing.py
+```
+
+Check the source code for the exact execution sequence and configuration requirements.
+
+---
+
+## 🔄 System Workflow
 
 ### Step 1: Student Registration
 
-- Enter the student's ID and name in the application.
+- Enter the student's ID and name.
 - Click the **Take Images** button.
-- The system captures approximately 200 face images.
-- Captured images are stored in the `TrainingImage` folder.
+- The system captures approximately 200 facial images.
+- Images are stored in the `TrainingImage` folder.
 
-### Step 2: Train the Recognition Model
+### Step 2: Face Recognition Training
 
 - Click the **Train Image** button.
-- The system processes the collected face images.
+- The system processes the captured facial images.
 - Training may take approximately 5–10 minutes for 10 persons.
 - The trained model is saved in `TrainingImageLabel`.
 
@@ -112,79 +192,113 @@ python AMS_Run.py
 
 ### Step 4: Attendance Reports
 
-- Attendance records are generated in CSV format.
-- Records are organized according to time and subject.
+- Attendance is generated in CSV format.
+- Records are organized according to date, time, and subject.
 - Attendance data can also be stored in a database.
 
 ### Step 5: Manual Attendance
 
 - Click the **Manually Fill Attendance** button.
-- Enter attendance details manually.
-- The system generates a CSV attendance file and can store records in the database.
+- Enter the required attendance information.
+- The system generates an attendance CSV file.
+- Attendance information can also be stored in the database.
 
-## 🗄️ Database Configuration
+---
 
-To enable database integration:
+## 🔐 Student Login Credentials – Batch 4
 
-1. Install and configure WAMP Server.
-2. Create your database.
-3. Open `AMS_Run.py`.
-4. Update the database name and connection details according to your configuration.
+The following demonstration credentials were provided with the project:
+
+| Field | Details |
+|---|---|
+| Username | `batch` |
+| Password | `batch4` |
+| Batch | **Batch 4** |
+
+**Note:** Change the default credentials before using the application in a real environment.
 
 ## 📷 Webcam Configuration
 
-**Default webcam:**
+**Default Webcam:**
 
 ```python
 cam = cv2.VideoCapture(0)
 ```
 
-**External webcam (if detected as camera index 2):**
+**External Webcam:**
 
 ```python
 cam = cv2.VideoCapture(2)
 ```
 
-If your webcam is not working, try changing the camera index.
+Change the camera index according to the webcam connected to your system.
 
-## 🔐 Student Login Details
+## 🗄️ Database Configuration
 
-The following credentials are provided in the project configuration:
+The application supports optional database integration using WAMP Server.
 
-| Field | Value |
-|---|---|
-| Username | `batch` |
-| Password | `batch4` |
+1. Install and start WAMP Server.
+2. Open phpMyAdmin.
+3. Create the required database.
+4. Open the database configuration in the application.
+5. Update the database name and connection details.
+6. Run the application and verify the database connection.
 
-*These are the supplied demonstration credentials. Change them before deploying the application or publishing real student data.*
-
-## 📂 Important Project Folders
+## 📊 Important Project Directories
 
 | Folder / File | Description |
 |---|---|
-| `TrainingImage/` | Stores captured student face images |
+| `TrainingImage/` | Stores captured student facial images |
 | `TrainingImageLabel/` | Stores the trained recognition model |
 | `StudentDetails/` | Stores student information |
-| `AMS_Run.py` | Main application entry point, as described in the setup instructions |
+| `Trainner.yml` | Trained recognition model |
+| `training.py` | Model training script |
+| `testing.py` | Testing and recognition script |
+| `haarcascade_frontalface_default.xml` | Face detection classifier |
 
-## 🔮 Future Improvements
+## 🔮 Future Enhancements
 
-- Cloud-based attendance storage.
 - Real-time attendance dashboard.
+- Cloud-based attendance storage.
+- Email and SMS notifications.
 - Improved face recognition accuracy.
-- Email notifications for attendance.
-- Export attendance reports in Excel and PDF formats.
+- Mobile application integration.
+- Advanced attendance analytics.
+- Export reports in Excel and PDF formats.
+- Multi-camera attendance monitoring.
 
-## 👨‍💻 Author
+## 🎯 Project Outcomes
 
-**Kasukurthi Prem Kumar**
+- Automated student attendance management.
+- Reduced manual attendance workload.
+- Faster student identification.
+- Digital attendance record maintenance.
+- Improved attendance management efficiency.
+
+## 📜 License
+
+This project was developed for educational and academic purposes as part of the B.Tech Computer Science and Engineering program at QIS College of Engineering.
+
+## 👨‍💻 Project Author
+
+**K. Prem Kumar**
+
+Computer Science and Engineering  
+QIS College of Engineering
 
 - GitHub: [@kaukurthiprem](https://github.com/kaukurthiprem)
-
-## ⭐ Support
-
-If you find this project useful, consider giving the repository a ⭐ on GitHub!
+- Repository: [Face Recognition Attendance Management System](https://github.com/kaukurthiprem/Face_emotional_recitation)
 
 ---
 
-**Built with ❤️ using Python and OpenCV.**
+<p align="center">
+  ⭐ If you find this project useful, please give it a star on GitHub!
+</p>
+
+<p align="center">
+  <b>Developed with ❤️ by K. Prem Kumar and Team</b>
+</p>
+
+<p align="center">
+  Python | OpenCV | Computer Vision | Face Recognition
+</p>
