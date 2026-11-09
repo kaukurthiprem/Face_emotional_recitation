@@ -32,8 +32,8 @@ venv38\Scripts\activate
  python AMS_Run.py
 
 ### To check the regester student 
- username ;Prem
- password:Premdhfm
+ username ;batch
+ password:batch4
 
 
  ### To connect webcam use "2"
